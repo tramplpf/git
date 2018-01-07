@@ -1,1 +1,6 @@
 .idea/workspace.xml
+#忽略todo目录下的所有文件
+todo/
+
+#忽略 .gitignore 文件本身
+.gitignore
