@@ -1,0 +1,79 @@
+使用git 命令对config 进行CRUD操作：
+增加：
+    git config --levenName --add configName configValue
+    $:  git config --global --add user.name=用户名
+    可以为一个变量可以有多个不同的值。 比如 user.name
+删除：
+    git config --global --unset configName  (只针对存在唯一值的情况)
+
+查询：
+    git config --system --list   # 查询系统级config
+    git config --global --list   # 查看全局级 config
+    git config --local  --list   #查看仓库级 config
+    git config --list  # 查看当前生效的配置
+     git config configName  #查询实际生效的配置值
+    git config --levelName configName   # 查询指定级别下： 实际生效的配置值
+    git config --get configName  # 查询实际生效的配置值  （？？？？不懂）
+    git config --list --levelName  # 查询指定级别下： 所有的配置（包括不生效的）
+
+    获取一个配置项：
+        git config [-local| -global | -system] -get section.key (默认是获取local配置的内容)
+            如果获取一个section不存在的key值，不会返回任何值  section不存在
+            如果获取一个不存在section的key值，则会报错。       section存在，但是它的key不存在。
+
+
+
+
+
+
+修改：
+    git config --levelName  configName configValue  (只针对唯一量)
+
+     当要修改的变量，有多个不同的取值的时候，可以通过 添加  --replace-all 或者  --add 参数来进行批量修改
+
+
+
+编辑： 通过 --edit   （-e） 参数来进行编辑
+    格式： git config [-local|-global|-system] -e
+    执行这个命令的时候，git会用配置文件中设定的编辑器打开配置文件
+    编辑仓库级config： git config  -local -e,  与 -list 参数不同的是，git config -e 默认是编辑仓库级的配置文件
+    编辑全局级的config ： git config --global -e
+    编辑系统级config:  git config  --system -e
+
+
+
+
+背景知识： git里面一共有3个配置文件， 首先是： 仓库级配置文件，该文件位于当前仓库下， 路径 .git/, 文件名为 config
+第二个文件是全局级配置文件，位于用户目录下，在C：\user\
+最后是系统级配置文件： 位于本地git 安装目录下。 (具体的位置，根据版本的不同，有一定的区别)
+    上述配置文件的权重是： 仓库 >  全局  > 系统  分别对应  --local   --global --system
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
