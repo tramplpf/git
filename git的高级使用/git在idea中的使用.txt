@@ -1,0 +1,4 @@
+1. 在 idea中可以进行常规的添加文件到主分支中
+2. 在 idea中创建分支
+        右键项目---> git >repository  --> new Branch    创建分支
+
