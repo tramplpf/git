@@ -1,0 +1,24 @@
+D:\program\IDEA\git\git笔记>git config --list
+core.symlinks=false
+core.autocrlf=true
+core.fscache=true
+color.diff=auto
+color.status=auto
+color.branch=auto
+color.interactive=true
+help.format=html
+rebase.autosquash=true
+http.sslcainfo=D:/software/work/git/Git/mingw64/ssl/certs/ca-bundle.crt
+http.sslbackend=openssl
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+credential.helper=manager
+gui.encoding=utf-8
+i18n.commitencoding=utf-8
+svn.pathnameencoding=utf-8
+user.name=tramplpf      # github的登录的用户
+user.email=lpf921028    # github 的登录用户的密码
+core.quotepapth=false

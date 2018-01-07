@@ -1,0 +1,12 @@
+通过git 命令查看配置列表：
+    git config --list
+
+通过 git 命令设置系统上登录github的用户名和邮箱
+    git config  --global user.name
+    git config --global user.email 'y邮箱名'  ## 这里的邮箱名其实就是密码
+
+将系统中，某个文件夹设置成git的本地仓库
+    $ cd  gitRepo   #切换到 gitRepo 目录
+    $ git init   # 将文件夹设置成仓库，此时在目录下，会出现一个 .git 目录
+
+
