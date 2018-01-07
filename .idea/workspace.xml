@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="469cc2b0-0e9d-4909-8d54-10e995a203da" name="Default" comment="" />
+=======
+    <list default="true" id="469cc2b0-0e9d-4909-8d54-10e995a203da" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/git的高级使用/学习git命令使用.docx" afterPath="$PROJECT_DIR$/git的高级使用/学习git命令使用.docx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
+>>>>>>> branchManager
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -124,6 +131,14 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
   </component>
+<<<<<<< HEAD
+=======
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\program\IDEA\git\git笔记\git\git的高级使用" />
+    </key>
+  </component>
+>>>>>>> branchManager
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -528,6 +543,12 @@
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
+<<<<<<< HEAD
+=======
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+>>>>>>> branchManager
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="469cc2b0-0e9d-4909-8d54-10e995a203da" name="Default" comment="" />
@@ -539,7 +560,11 @@
       <workItem from="1515323924996" duration="7845000" />
       <workItem from="1515331858842" duration="3580000" />
       <workItem from="1515353254442" duration="2341000" />
+<<<<<<< HEAD
       <workItem from="1515357987173" duration="1439000" />
+=======
+      <workItem from="1515357987173" duration="667000" />
+>>>>>>> branchManager
     </task>
     <task id="LOCAL-00001">
       <created>1515321670668</created>
@@ -601,10 +626,17 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="17002000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+=======
+    <option name="totallyTimeSpent" value="16230000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+>>>>>>> branchManager
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -651,6 +683,13 @@
     <breakpoint-manager />
     <watches-manager />
   </component>
+<<<<<<< HEAD
+=======
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+>>>>>>> branchManager
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/需要深入了解的内容/git中配置列表中不同参数的含义.txt">
       <provider selected="true" editor-type-id="text-editor">
