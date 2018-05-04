@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <link rel="canonical" href="https://blog.csdn.net/MOY37RQW1JarN33BgZk/article/details/79991156"/> 
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="referrer" content="always">
+    <meta name="description" content="
+  
+    
+                    
+
+                    
+
+                    
+                    
+                    关注「实验楼」，每天分享一个项目教程   使用这12个Git的诀窍与技巧来令你的版本控制经验更加有用。正文共：4265 字 预计阅读时间：11 分钟使用这12个Git的诀..." />
+    <meta name="keywords" content="" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" /><link rel="alternate" media="handheld" href="#" />
+    <meta name="shenma-site-verification" content="5a59773ab8077d4a62bf469ab966a63b_1497598848">
+    <link href="https://csdnimg.cn/public/favicon.ico" rel="SHORTCUT ICON">
+    <title>Git 12 岁了，为你送上 12 个 Git 的使用技巧！ - CSDN博客</title>
+    
+            <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/detail-95d26ed23f.min.css">
+        <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/themes/big-white/big-white-02ffddfbf5.min.css">
+
+    <script type="text/javascript">
+        var username = "moy37rqw1jarn33bgzk";
+        var blog_address = "https://blog.csdn.net/moy37rqw1jarn33bgzk";
+        var static_host = "https://csdnimg.cn/release/phoenix/";
+        var currentUserName = ""; 
+        var isShowAds = true;
+        var isOwner = false;
+        var loginUrl = "https://passport.csdn.net/account/login?from=https://blog.csdn.net/MOY37RQW1JarN33BgZk/article/details/79991156"
+        var blogUrl = "https://blog.csdn.net/";
+        var curSkin = "big-white";
+    </script>
+    <script type="text/javascript">
+        // Traffic Stats of the entire Web site By baidu
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?6bcd52f51e9b3dce32bec4a3997715ac";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+        // Traffic Stats of the entire Web site By baidu end
+    </script>
+    <script src="https://csdnimg.cn/public/common/libs/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="https://csdnimg.cn/rabbit/exposure-click/main-1.0.5.js"></script>
+        <script type="text/javascript" src="https://csdnimg.cn/pubfooter/js/tracking-1.0.2.js" charset="utf-8"></script>
+        <link rel="stylesheet" href="https://csdnimg.cn/public/sandalstrap/1.2/css/sandalstrap.min.css"> 
+    <style>
+        .MathJax, .MathJax_Message, .MathJax_Preview{
+            display: none
+        }
+    </style>
+</head>
+<body>    
+    <link rel="stylesheet" href="https://csdnimg.cn/public/common/toolbar/content_toolbar_css/content_toolbar.css">
+    <script id="toolbar-tpl-scriptId" src="https://csdnimg.cn/public/common/toolbar/js/content_toolbar.js" type="text/javascript" domain="https://blog.csdn.net/"></script>
+    <script src="https://csdnimg.cn/public/sandalstrap/1.2/fonts/csdnc/csdnc.js"></script><link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/blog_code-c3a0c33d5c.css">
+<link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/vendor/pagination/paging.css">
+<script>
+    var recommendCount = 10;
+    recommendCount = recommendCount > 1 ? recommendCount+1 : recommendCount;
+    var articleTit = 'Git 12 岁了，为你送上 12 个 Git 的使用技巧！';
+    var ChannelId = 0;
+    var articleId = '79991156';
+    var commentscount = 0;
+    var islock = false;
+    var curentUrl = "https://blog.csdn.net/MOY37RQW1JarN33BgZk/article/details/79991156";
+    var myUrl = "https://my.csdn.net/";
+    //1禁止评论，2正常
+    var commentAuth = 0;
+    //百度搜索
+    var baiduKey = "";
+    var needInsertBaidu = true;;
+</script>
+
+<header>
+	<div class="container d-flex clearfix">
+		<div class="title-box">
+			<h6 class="title-blog">
+				<a href="https://blog.csdn.net/moy37rqw1jarn33bgzk">实验楼</a>
+			</h6>
+			<p class="description">面向IT学习者，每天分享Linux、Python、Java、Android、WEB…等IT编程干货</p>
+		</div>
+		<div class="opt-box d-flex justify-content-end">
+			<a class="btn btn-sm" href="https://blog.csdn.net/moy37rqw1jarn33bgzk/rss/list">
+					<svg class="icon" aria-hidden="true">
+						<use xlink:href="#csdnc-rss"></use>
+					</svg>RSS订阅</a>
+					</div>
+	</div>
+</header><script src="https://dup.baidustatic.com/js/ds.js"></script>
+<div class="container clearfix pt0" id="mainBox">
+    <aside>
+		    <div id="asideProfile" class="aside-box">
+    <h3 class="aside-title">个人资料</h3>
+    <div class="profile-intro d-flex">
+        <div class="avatar-box d-flex justify-content-center flex-column">
+            <a href="https://blog.csdn.net/moy37rqw1jarn33bgzk">
+                <img src="https://avatar.csdn.net/E/D/3/3_moy37rqw1jarn33bgzk.jpg" class="avatar_pic">
+            </a>
+        </div>
+        <div class="user-info d-flex justify-content-center flex-column">
+            <p class="name csdn-tracking-statistics tracking-click" data-mod="popu_379">
+                <a href="https://blog.csdn.net/moy37rqw1jarn33bgzk" target="_blank" class="text-truncate" id="uid">moy37rqw1jarn33bgzk</a>
+            </p>
+                    </div>
+                <div class="opt-box d-flex justify-content-center flex-column">
+            <span  class="csdn-tracking-statistics tracking-click" data-mod="popu_379">
+                                <a class="btn btn-sm btn-red-hollow" href="https://passport.csdn.net/account/login?from=https://blog.csdn.net/MOY37RQW1JarN33BgZk/article/details/79991156" target="_self">关注</a>
+                            </span>
+            
+        </div>
+            </div>
+    <div class="data-info d-flex item-tiling">
+        <dl class="text-center" title="3">
+            <dt>原创</dt>
+            <dd><span class="count">3</span></dd>
+        </dl>
+        <dl class="text-center" title="143">
+            <dt>粉丝</dt>
+            <dd id='fan'><span class="count">143</span></dd>
+        </dl>
+        <dl class="text-center" title="107">
+            <dt>喜欢</dt>
+            <dd><span class="count">107</span></dd>
+        </dl>
+        <dl class="text-center" title="167">
+            <dt>评论</dt>
+            <dd><span class="count">167</span></dd>
+        </dl>
+    </div>
+    <div class="grade-box clearfix">
+        <dl>
+            <dt>等级：</dt>
+            <dd>
+                <a href="https://blog.csdn.net/home/help.html#level" title="4级,点击查看等级说明" target="_blank">
+                    <svg class="icon icon-level" aria-hidden="true">
+                        <use xlink:href="#csdnc-bloglevel-4"></use>
+                    </svg>
+                </a>
+            </dd>
+        </dl>
+        <dl>
+            <dt>访问：</dt>
+            <dd title="189491">
+                18万+            </dd>
+        </dl>
+        <dl>
+            <dt>积分：</dt>
+            <dd title="1445">
+                1445            </dd>
+        </dl>
+        <dl title="35467">
+            <dt>排名：</dt>
+            <dd>3万+</dd>
+        </dl>
+    </div>
+    </div>		    <div class="csdn-tracking-statistics mb8 box-shadow" data-pid="blog" data-mod="popu_4" style="height:250px;">
+    <div class="aside-content text-center" id="cpro_u2734133">
+        <!-- 投放代码 -->
+        <script type="text/javascript" src="//cee1.iteye.com/lgyyovfyh.js"></script>
+    </div>
+</div>
+		    <div id="asideNewArticle" class="aside-box">
+    <h3 class="aside-title">最新文章</h3>
+    <div class="aside-content">
+        <ul class="inf_list clearfix csdn-tracking-statistics tracking-click" data-mod="popu_382">
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/MOY37RQW1JarN33BgZk/article/details/80141909" target="_blank">TIOBE 4 月编程语言排行榜：Python 持续升温，Perl 苦苦挣扎</a>
+            </li>
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/MOY37RQW1JarN33BgZk/article/details/80141908" target="_blank">程序员简历中最致命的「八个错误 」及解决方法</a>
+            </li>
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/MOY37RQW1JarN33BgZk/article/details/80118192" target="_blank">十大编程语言创立者现状，有的已驾鹤西去</a>
+            </li>
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/MOY37RQW1JarN33BgZk/article/details/80118191" target="_blank">值得收藏的27个机器学习的小抄</a>
+            </li>
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/MOY37RQW1JarN33BgZk/article/details/80105370" target="_blank">从0到1，如何在6周内成为机器学习工程师</a>
+            </li>
+                    </ul>
+    </div>
+</div>
+		    		    		    <div id="asideArchive" class="aside-box flexible-box">
+    <h3 class="aside-title">归档</h3>
+    <div class="aside-content">
+        <ul class="archive-list">
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/moy37rqw1jarn33bgzk/article/month/2018/05">
+                    2018年5月                    <span class="count float-right">2篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/moy37rqw1jarn33bgzk/article/month/2018/04">
+                    2018年4月                    <span class="count float-right">45篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/moy37rqw1jarn33bgzk/article/month/2018/03">
+                    2018年3月                    <span class="count float-right">42篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/moy37rqw1jarn33bgzk/article/month/2018/02">
+                    2018年2月                    <span class="count float-right">28篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/moy37rqw1jarn33bgzk/article/month/2018/01">
+                    2018年1月                    <span class="count float-right">41篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/moy37rqw1jarn33bgzk/article/month/2017/12">
+                    2017年12月                    <span class="count float-right">28篇</span>
+                </a>
+            </li>
+                    </ul>
+    </div>
+        <p class="text-center">
+        <a class="btn btn-link-blue flexible-btn" data-fbox="aside-archive">展开</a>
+    </p>
+    </div>
+		    <div id="asideHotArticle" class="aside-box">
+	<h3 class="aside-title">热门文章</h3>
+	<div class="aside-content">
+		<ul class="hotArticle-list csdn-tracking-statistics tracking-click" data-mod="popu_521">
+							<li>
+					<a href="https://blog.csdn.net/moy37rqw1jarn33bgzk/article/details/79051044">2018年了，希望所有的程序员都能逃过这些梗……</a>
+					<p class="read">阅读量：<span>56210</span></p>
+				</li>
+							<li>
+					<a href="https://blog.csdn.net/moy37rqw1jarn33bgzk/article/details/79051056">编程语言1月排行榜：C是年度语言，Python增长量第二</a>
+					<p class="read">阅读量：<span>26942</span></p>
+				</li>
+							<li>
+					<a href="https://blog.csdn.net/moy37rqw1jarn33bgzk/article/details/79825793">三个月死磕Python是种什么样的体验？</a>
+					<p class="read">阅读量：<span>13304</span></p>
+				</li>
+							<li>
+					<a href="https://blog.csdn.net/moy37rqw1jarn33bgzk/article/details/79070297">程序员该考虑什么时候辞职</a>
+					<p class="read">阅读量：<span>8150</span></p>
+				</li>
+							<li>
+					<a href="https://blog.csdn.net/moy37rqw1jarn33bgzk/article/details/79991149">对文艺程序员的一次访谈</a>
+					<p class="read">阅读量：<span>6602</span></p>
+				</li>
+					</ul>
+	</div>
+</div>
+		    <div id="asideNewComments" class="aside-box">
+    <h3 class="aside-title">最新评论</h3>
+    <div class="aside-content">
+        <ul class="newcomment-list">
+                        <li>
+                <a class="title text-truncate" target="_blank" href="https://blog.csdn.net/moy37rqw1jarn33bgzk/article/details/79991149#comments">对文艺程序员的一次访谈</a>
+                <p class="comment">
+                    <a href="https://my.csdn.net/sky15732625340" class="user-name" target="_blank">sky15732625340</a>：我笑出了声，，，，                </p>
+            </li>
+                        <li>
+                <a class="title text-truncate" target="_blank" href="https://blog.csdn.net/moy37rqw1jarn33bgzk/article/details/80090976#comments">我曾误删了公司的数据库，但还是活下...</a>
+                <p class="comment">
+                    <a href="https://my.csdn.net/yuyu7500" class="user-name" target="_blank">yuyu7500</a>：没有笑点啊                </p>
+            </li>
+                        <li>
+                <a class="title text-truncate" target="_blank" href="https://blog.csdn.net/moy37rqw1jarn33bgzk/article/details/78930953#comments">2017 年编程语言排行榜出炉，P...</a>
+                <p class="comment">
+                    <a href="https://my.csdn.net/qq_36562933" class="user-name" target="_blank">qq_36562933</a>：print &quot;呵呵&quot;                </p>
+            </li>
+                        <li>
+                <a class="title text-truncate" target="_blank" href="https://blog.csdn.net/moy37rqw1jarn33bgzk/article/details/79991154#comments">走在路上能被识别人脸，该为高科技而...</a>
+                <p class="comment">
+                    <a href="https://my.csdn.net/e12345678910" class="user-name" target="_blank">e12345678910</a>：人脸时代没有隐私。                </p>
+            </li>
+                        <li>
+                <a class="title text-truncate" target="_blank" href="https://blog.csdn.net/moy37rqw1jarn33bgzk/article/details/80002409#comments">StackOverflow 调查：...</a>
+                <p class="comment">
+                    <a href="https://my.csdn.net/gk3214" class="user-name" target="_blank">gk3214</a>：科技与人均GDP相关                </p>
+            </li>
+                    </ul>
+    </div>
+</div>
+		<div id="asideFooter">
+			
+		<div class="aside-box">
+						<script type="text/javascript" src="//cee1.iteye.com/avneunkwb.js"></script>
+					</div>
+				<div class="aside-box">
+			<div class="persion_article">
+			</div>
+		</div>
+	</div>
+</aside>
+<script src="https://csdnimg.cn/pubfooter/js/publib_footer-1.0.3.js?20180309" data-isfootertrack="false" type="text/javascript"></script>
+<script>
+	$("a.flexible-btn").click(function(){
+		$(this).parents('div.aside-box').removeClass('flexible-box');
+		$(this).remove();
+	})
+</script>
+    <main>
+        <div class="blog-content-box">
+	<div class="article-title-box">
+			<span class="article-type type-2 float-left">转</span>		<h6 class="title-article">Git 12 岁了，为你送上 12 个 Git 的使用技巧！</h6>
+	</div>
+	<div class="article-info-box">
+		<div class="article-bar-top d-flex">
+												<span class="time">2018年04月18日 15:28:16</span>
+			<div class="float-right">
+				<span class="read-count">阅读数：107</span>
+											</div>
+		</div>
+	</div>
+	<article>
+		<div id="article_content" class="article_content csdn-tracking-statistics" data-pid="blog"  data-mod=popu_307  data-dsm = "post" >
+                    <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/htmledit_views-0a60691e80.css" />
+            <div class="htmledit_views">
+                
+    <div class="rich_media_content">
+                    
+
+                    
+
+                    
+                    
+                    <p style="margin-top:5px;margin-bottom:20px;padding:.5em 1em;min-height:1em;border-width:0px;border-color:rgb(0,187,236);font-size:1em;color:inherit;background-color:rgb(0,187,236);line-height:1.75em;text-align:center;"><span style="color:rgb(255,255,255);"><strong style="color:inherit;border-width:0px;">关注「实验楼」，每天分享一个项目教程</strong>   </span></p><p style="padding:10px;min-height:1em;border-width:1px;border-style:solid;border-color:rgb(192,200,209);background-color:rgb(254,255,255);"><span style="color:rgb(68,68,68);font-size:15px;"><span style="color:rgb(88,88,88);font-family:'微软雅黑';background-color:rgb(255,255,255);"><span style="text-indent:16px;">使用这12个Git的诀窍与技巧来令你的版本控制经验更加有用。</span></span></span></p><p style="margin-top:25px;margin-bottom:5px;padding-right:1em;padding-left:1em;white-space:normal;min-height:1em;text-align:center;"><span style="font-size:15px;color:rgb(120,172,254);">正文共：4265 字 </span></p><p style="margin-top:5px;margin-bottom:25px;padding-right:1em;padding-left:1em;white-space:normal;min-height:1em;text-align:center;"><span style="font-size:15px;color:rgb(120,172,254);">预计阅读时间：11 分钟</span></p><p class="md_block" style="margin-top:1.5em;margin-bottom:1.5em;color:rgb(17,17,17);"><span class="md_line" style="margin-bottom:.5em;line-height:1.81866;padding-left:.5em;padding-right:.5em;">使用这12个Git的诀窍与技巧来令你的版本控制经验更加有用。</span></p><p style="margin-bottom:.5em;line-height:1.81866;padding-left:.5em;padding-right:.5em;margin-top:20px;text-align:center;"><img style="border:none;" src="https://ss.csdn.net/p?http://mmbiz.qpic.cn/mmbiz_jpg/bLmy0N4HIacDgl2BMtqxVtr5EibWVNGr4LlTH5efIssNqUhcHlIniaBkBZUlqUM5F0rxnFjTRf5BnyLa5skibHodQ/640?wx_fmt=jpeg&amp;wxfrom=5&amp;wx_lazy=1" alt="640?wx_fmt=jpeg&amp;wxfrom=5&amp;wx_lazy=1" /></p><p class="md_block" style="margin-top:1.5em;margin-bottom:1.5em;color:rgb(17,17,17);padding-left:.5em;padding-right:.5em;"><span class="md_line" style="margin-bottom:.5em;line-height:1.8186625;">Git，一个分布式版本控制系统，它已经成为了开源世界的源码控制默认工具，在4月7号12岁了。但是使用Git中更另人沮丧的是，你需要了解多少才能让你更有效的使用它。同时这也是使用Git中比较美妙的一件事，因为没有什么比发现一个新的小技巧来简化或提高你的工作流的效率更加令人快乐了。</span></p><p class="md_block" style="margin-top:1.5em;margin-bottom:1.5em;color:rgb(17,17,17);padding-left:.5em;padding-right:.5em;"><span class="md_line" style="margin-bottom:.5em;line-height:1.8186625;">为了纪念Git的12岁生日，这篇文章提供12个诀窍与技巧来让你的Git经验更加有用和强大，从一些你可能会忽视的基础开始到一些真正的强大技巧!</span></p><h2 style="color:rgb(16,163,238);line-height:1.5em;margin-top:1.5em;margin-bottom:.8em;font-size:1.45em;">1. 你的 ~/.gitconfig 文件</h2><span style="color:rgb(17,17,17);"></span><p class="md_block" style="margin-top:1.5em;margin-bottom:1.5em;color:rgb(17,17,17);padding-left:.5em;padding-right:.5em;"><span class="md_line" style="margin-bottom:.5em;line-height:1.8186625;">在第一次用git命令来提交一个仓库的修改，你可能会首先看到像下面这种内容：</span></p><pre class="lang_git" style="margin-top:1.2em;margin-bottom:1.2em;border-width:1px;border-style:solid;border-color:rgb(230,230,230);padding:15px .5em;background-color:rgb(247,247,247);font-size:14px;color:rgb(17,17,17);"><code style="background-image:none;border-style:none;">*** Please tell me who you are.<br />Run<br />  git config --global user.email "you@example.com"<br />  git config --global user.name "Your Name"<br />to set your account's default identity.</code></pre><p class="md_block" style="margin-top:1.5em;margin-bottom:1.5em;color:rgb(17,17,17);padding-left:.5em;padding-right:.5em;"><span class="md_line" style="margin-bottom:.5em;line-height:1.8186625;">你可能还没有意识到那些命令正在修改~/.gitconfig文件的内容，这个文件就是Git存储全局配置选项的文件。通过你的~/.gitconfig文件你可要做很多事情，包括定义别名，永久的打开（或关闭）一些特定的命令选项，还可以修改Git如何工作的方面（例如：git diff使用哪个diff算法，或者默认使用什么类型的的合并策略）。你甚至可以按条件地基于路径包含其他配置文件到一个仓库！使用“man git-config”查看所有细节。</span></p><h2 style="color:rgb(16,163,238);line-height:1.5em;margin-top:1.5em;margin-bottom:.8em;font-size:1.45em;">2. 你的仓库的.gitconfig文件</h2><span style="color:rgb(17,17,17);"></span><p class="md_block" style="margin-top:1.5em;margin-bottom:1.5em;color:rgb(17,17,17);padding-left:.5em;padding-right:.5em;"><span class="md_line" style="margin-bottom:.5em;line-height:1.8186625;">在之前的技巧中，你可能会想知道在git config 命令中的—global标识是做什么的。它告诉Git更新“global”配置，也就是~/.gitconfig发现的这个配置。当然，拥有一个全局的配置代表了一个本地配置，而且足够肯定的是，如果你省略—global选项，git config 会更新这个仓库自己的配置，这个配置文件存储在.git/config。</span></p><p class="md_block" style="margin-top:1.5em;margin-bottom:1.5em;color:rgb(17,17,17);padding-left:.5em;padding-right:.5em;"><span class="md_line" style="margin-bottom:.5em;line-height:1.8186625;">在.git/config中设置的选项会推翻在~/.gitconfig文件中的对应设置。因此，例如，如果你需要在一个特定的仓库中使用一个不同的邮箱地址，你可以运行“git config user.email "also_you@example.com"”。然后，你在这个仓库中提交会使用你单独配置的这个邮箱地址。如果你使用一个工作的电脑在开源项目中工作，但是希望在这个项目中使用个人的邮箱地址，而其他在主Git配置中仍然使用工作邮箱，这一点是非常有用的。</span></p><p class="md_block" style="margin-top:1.5em;margin-bottom:1.5em;color:rgb(17,17,17);padding-left:.5em;padding-right:.5em;"><span class="md_line" style="margin-bottom:.5em;line-height:1.8186625;">在~/.gitconfig中可以设置的任何东西，都可以在.git/config中设置来对这个仓库做特定设置。在下面的这些技巧中，当我提到在你的~/.gitconfig文件中添加什么东西，同时也说明可以在特定的仓库的.git/config中添加来设置那个选项。</span></p><p class="md_block" style="margin-top:1.5em;margin-bottom:1.5em;color:rgb(17,17,17);padding-left:.5em;padding-right:.5em;"><span class="md_line" style="margin-bottom:.5em;line-height:1.81866;font-size:24px;color:rgb(15,173,238);">3、别名</span><span class="md_line" style="margin-bottom:.5em;line-height:1.8186625;">别名是你可以在你的~/.gitconfig文件里做的另外一件事。他的工作原理就像shell命令行里的别名——设置一个新的命令名称来调用一个或者多个其他的命令，这些命令通常包括一些特定的选项或标识。别名对于你经常使用的那些又长又复杂的命令行是非常有效的。</span></p><p class="md_block" style="margin-top:1.5em;margin-bottom:1.5em;color:rgb(17,17,17);padding-left:.5em;padding-right:.5em;"><span class="md_line" style="margin-bottom:.5em;line-height:1.8186625;">你可以使用git config命令来定义别名——例如，执行”git config —global —add alias.st status”命令后，会使得执行git st与执行git status做的是同样的事情——然而，我发现当定义别名的时候，只需要直接在~/.gitconfig文件里编辑通常会更加容易。</span></p><p class="md_block" style="margin-top:1.5em;margin-bottom:1.5em;color:rgb(17,17,17);padding-left:.5em;padding-right:.5em;"><span class="md_line" style="margin-bottom:.5em;line-height:1.8186625;">如果你选择这么做，你会发现~/.gitconfig文件就是一个INI文件，INI是一种带有特定段落的基础键值对文件格式。添加一个别名时，你将改变[alias]段落。例如：上面提到的定义相同的git st别名，需要添加下面这段代码：</span></p><pre class="lang_git" style="margin-top:1.2em;margin-bottom:1.2em;border-width:1px;border-style:solid;border-color:rgb(230,230,230);padding:15px .5em;background-color:rgb(247,247,247);font-size:14px;color:rgb(17,17,17);"><code style="background-image:none;border-style:none;">[alias]<br />st = status</code></pre><p class="md_block" style="margin-top:1.5em;margin-bottom:1.5em;color:rgb(17,17,17);padding-left:.5em;padding-right:.5em;"><span class="md_line" style="margin-bottom:.5em;line-height:1.8186625;">（如果已经有了[alias]这个段落，只需要在这个段落中添加到第二行）</span></p><h2 style="color:rgb(16,163,238);line-height:1.5em;margin-top:1.5em;margin-bottom:.8em;font-size:1.45em;">4. shell命令中的别名</h2><span style="color:rgb(17,17,17);"></span><p class="md_block" style="margin-top:1.5em;margin-bottom:1.5em;color:rgb(17,17,17);padding-left:.5em;padding-right:.5em;"><span class="md_line" style="margin-bottom:.5em;line-height:1.8186625;">别名不仅仅是运行其他Git子命令——你也可以定义别名，这些别名可以运行其他shell命令。这是一个很好的方法来处理一个重复的、罕见的、复杂的任务：一旦你已经想到第一次怎么做，那就使用一个别名保存这个命令。例如，我有几个仓库是我fork了一个开源项目，而且在本地做了一些修改，这些修改不用贡献给这个项目。在项目的持续的开发的过程中我想保持最新的版本，同时保留我的本地修改。为了完成这个想法，我需要定期地从upstream仓库中合并这些修改到我的fork——我定义一个别名“upstream-merge”来完成这个操作。定义如下：</span></p><pre style="margin-top:1.2em;margin-bottom:1.2em;border-width:1px;border-style:solid;border-color:rgb(230,230,230);padding:15px .5em;background-color:rgb(247,247,247);font-size:14px;color:rgb(17,17,17);"><code style="background-image:none;border-style:none;">upstream-merge = !"git fetch origin -v &amp;&amp; git fetch upstream -v &amp;&amp; git merge upstream/master &amp;&amp; git push"</code></pre><p class="md_block" style="margin-top:1.5em;margin-bottom:1.5em;color:rgb(17,17,17);padding-left:.5em;padding-right:.5em;"><span class="md_line" style="margin-bottom:.5em;line-height:1.8186625;">别名定义开始的这个“!”是告诉Git来通过shell运行这个命令。这个例子包括了运行一些git命令，但是使用这种方式定义别名可以运行任何shell命令。</span></p><p class="md_block" style="margin-top:1.5em;margin-bottom:1.5em;color:rgb(17,17,17);padding-left:.5em;padding-right:.5em;"><span class="md_line" style="margin-bottom:.5em;line-height:1.8186625;">（注意：如果你想复制我的upstream-merge别名，你将需要确认你有一个Git remote命名为upstream来指定这个你fork的upstream仓库。你可以通过“git remote add upstream<span class="Apple-converted-space"> ”来添加一个。）</span></span></p><h2 style="color:rgb(16,163,238);line-height:1.5em;margin-top:1.5em;margin-bottom:.8em;font-size:1.45em;">5. 可视化提交图</h2><span style="color:rgb(17,17,17);"></span><p class="md_block" style="margin-top:1.5em;margin-bottom:1.5em;color:rgb(17,17,17);padding-left:.5em;padding-right:.5em;"><span class="md_line" style="margin-bottom:.5em;line-height:1.8186625;">如果你从事的是一个有很多分支活动的项目，有时可能很难掌握所有正在发生的工作以及它们之间的相关性。各种GUI工具可让你弄清楚不同分支的概况以及在所谓的“提交图”中提交记录。例如，以下是我使用 GitLab 提交图查看器进行可视化的一个存储卡的部分截图：</span></p><p style="margin-bottom:16px;margin-top:20px;"><img class="img_loading" style="border:none;" src="https://ss.csdn.net/p?https://mmbiz.qpic.cn/mmbiz_png/bLmy0N4HIacDgl2BMtqxVtr5EibWVNGr4HEbGzCa16aA4LMsicCicsNfsqgQNa9S0ic7OR38nrINAicJt3C9m8ZbNVg/640?wx_fmt=png" alt="640?wx_fmt=png" /></p><p style="margin-bottom:16px;text-align:center;"><span style="font-size:14px;">John Anderson, CC BY</span></p><p style="margin-bottom:16px;text-align:left;"><span style="text-align:left;">如果你是专注于命令行的用户，就可以不在多个工具之间切换导致分心，这个工具在命令行上实现了类似图形界面的提交视图。通过 -- graph 参数获取 git 的记录：</span><span style="text-align:left;background-color:rgb(255,255,255);"> </span></p><p style="text-align:left;margin-top:20px;margin-bottom:20px;"><img class="img_loading" src="https://ss.csdn.net/p?https://mmbiz.qpic.cn/mmbiz_png/bLmy0N4HIacDgl2BMtqxVtr5EibWVNGr4S3cXuIsDtwsX8QFHWh7b7nOP3FdS50wicqncXkzicDwic8tfgUgEB4S5w/640?wx_fmt=png" alt="640?wx_fmt=png" /></p><p style="text-align:center;margin-top:20px;margin-bottom:20px;"><span style="font-size:15px;text-align:center;">John Anderson, CC BY</span></p><p class="md_block" style="margin-top:1.5em;margin-bottom:1.5em;color:rgb(17,17,17);padding-left:.5em;padding-right:.5em;"><span class="md_line" style="margin-bottom:.5em;line-height:1.8186625;">下面的命令可以得到一样的仓库可视化片段：</span></p><pre style="margin-top:1.2em;margin-bottom:1.2em;border-width:1px;border-style:solid;border-color:rgb(230,230,230);padding:15px .5em;background-color:rgb(247,247,247);font-size:14px;color:rgb(17,17,17);"><code style="background-image:none;border-style:none;">git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset' --abbrev-commit --date=relative</code></pre><p class="md_block" style="margin-top:1.5em;margin-bottom:1.5em;color:rgb(17,17,17);padding-left:.5em;padding-right:.5em;"><span class="md_line" style="margin-bottom:.5em;line-height:1.8186625;">--graph 选项将图表添加到日志的左侧， --abbrev-commit 存储提交使用了 SHA 方法， --date=relative 表达式用相对的术语来表示日期，并且 --pretty 以 bit 格式处理自定义格式。我知道 git lg 的别名，它是我最常运行的10个命令之一。</span></p><h2 style="color:rgb(16,163,238);line-height:1.5em;margin-top:1.5em;margin-bottom:.8em;font-size:1.45em;">6. 更优雅的强制推送(force-push)</h2><span style="color:rgb(17,17,17);"></span><p class="md_block" style="margin-top:1.5em;margin-bottom:1.5em;color:rgb(17,17,17);padding-left:.5em;padding-right:.5em;"><span class="md_line" style="margin-bottom:.5em;line-height:1.8186625;">有时，就跟你尽量避免使用它一样困难的是，你会发现你需要运行 git push --force 来覆写你仓库的远程副本上的历史记录。你可能已得到了一些反馈，他们会要求你进行交互式的变基(rebase)，或者你可能已经搞砸了，并且希望隐藏证据。</span></p><p class="md_block" style="margin-top:1.5em;margin-bottom:1.5em;color:rgb(17,17,17);padding-left:.5em;padding-right:.5em;"><span class="md_line" style="margin-bottom:.5em;line-height:1.8186625;">当他人在仓库的远程副本的同一分支上进行改动后，会发生强制推送的风险。当你强制推送已重写的历史记录时，某些提交将会丢失。这是 git push --force-with-lease 出现的原因 - 如果远程分支已更新，它不会允许你执行强制推送，这将确保你不会丢弃他人的工作。</span></p><h2 style="color:rgb(16,163,238);line-height:1.5em;margin-top:1.5em;margin-bottom:.8em;font-size:1.45em;">7. git add -N</h2><span style="color:rgb(17,17,17);"></span><p class="md_block" style="margin-top:1.5em;margin-bottom:1.5em;color:rgb(17,17,17);padding-left:.5em;padding-right:.5em;"><span class="md_line" style="margin-bottom:.5em;line-height:1.8186625;">你是否使用过git commit -a在一次行动中提交你所有未完成的修改，只有在你push完你的提交后才发现git commit -a忽略了新添加的文件？解决这个问题你可以用git add -N（“通知”）来告诉Git你想把新添加的文件包含在提交中在你第一次实际提交之前。</span></p><h2 style="color:rgb(16,163,238);line-height:1.5em;margin-top:1.5em;margin-bottom:.8em;font-size:1.45em;">8. git add -p</h2><span style="color:rgb(17,17,17);"></span><p class="md_block" style="margin-top:1.5em;margin-bottom:1.5em;color:rgb(17,17,17);padding-left:.5em;padding-right:.5em;"><span class="md_line" style="margin-bottom:.5em;line-height:1.8186625;">一最佳的实践为当使用Git时确保每个提交只包含一个逻辑更改--不管是修复一个bug还是（实现）一个新功能。然而， 有时当你工作 ，会在你的仓库中出现一个以上的修改 提交 。你怎么样把事情分开，使每个提交只包含适当的修改呢？git add --patch来解救！</span></p><p class="md_block" style="margin-top:1.5em;margin-bottom:1.5em;color:rgb(17,17,17);padding-left:.5em;padding-right:.5em;"><span class="md_line" style="margin-bottom:.5em;line-height:1.8186625;">这个标志将会使git add命令查看你工作副本中所有的变更，询问你是否愿意将它提交，跳过，或者推迟决定（还有其他一些更强大的选项，你可以通过在运行这命令后选择？来查看）。git add -p是一个神奇的工具来生产结构良好的提交。</span></p><h2 style="color:rgb(16,163,238);line-height:1.5em;margin-top:1.5em;margin-bottom:.8em;font-size:1.45em;">9. git checkout -p</h2><span style="color:rgb(17,17,17);"></span><p class="md_block" style="margin-top:1.5em;margin-bottom:1.5em;color:rgb(17,17,17);padding-left:.5em;padding-right:.5em;"><span class="md_line" style="margin-bottom:.5em;line-height:1.8186625;">与 git add -p类似，git checkout命令将使用 --patch 或 -p 选项，这会使 git 在本地工作副本中展示每个“大块”的改动，并允许丢弃对应改动 —— 简单地说就是恢复本地工作副本到你改变之前的状态。</span></p><p class="md_block" style="margin-top:1.5em;margin-bottom:1.5em;color:rgb(17,17,17);padding-left:.5em;padding-right:.5em;"><span class="md_line" style="margin-bottom:.5em;line-height:1.8186625;">某些场景下这非常有用，例如，在你跟踪一个 bug 时引入了一堆调试日志语句，在修正了这个 bug 之后，你可以先使用 git checkout -p 删除所有新加的调试日志，之后使用 git add -p 来添加 bug 修复。没有比组合一个极好的、结构良好的提交更令人满意的了！</span></p><h2 style="color:rgb(16,163,238);line-height:1.5em;margin-top:1.5em;margin-bottom:.8em;font-size:1.45em;">10. Rebase with command execution</h2><span style="color:rgb(17,17,17);"></span><p class="md_block" style="margin-top:1.5em;margin-bottom:1.5em;color:rgb(17,17,17);padding-left:.5em;padding-right:.5em;"><span class="md_line" style="margin-bottom:.5em;line-height:1.8186625;">有些项目有一条规则，即存储库中的每个提交都必须处于可工作状态 - 也就是说，在每次提交时，代码应该是可编译的，或运行测试套件应该不会失败的。当你在某分支上工作时间长时，但如果你最终因为某种原因需要rebase时，那么跳过每个变基后的提交以确保你没有意外引入一个中断是有些冗长乏味的。</span></p><p class="md_block" style="margin-top:1.5em;margin-bottom:1.5em;color:rgb(17,17,17);padding-left:.5em;padding-right:.5em;"><span class="md_line" style="margin-bottom:.5em;line-height:1.8186625;">幸运的是，git rebase已经支持了-x或--exec选项。git rebase -x<span class="Apple-converted-space"> 将在每次提交应用到rebase后运行该命令。因此，例如，如果你有一个项目，其中npm run tests会运行你的测试套件，那么在rebase期间应用每次提交后，git rebase -x npm run tests将会运行测试套件。这使你可以查看测试套件是否在任何变基后的提交中有失败情况，因此你可以确保测试套件在每次提交时仍能通过。</span></span></p><h2 style="color:rgb(16,163,238);line-height:1.5em;margin-top:1.5em;margin-bottom:.8em;font-size:1.45em;">11. 基于时间修改的指南</h2><span style="color:rgb(17,17,17);"></span><p class="md_block" style="margin-top:1.5em;margin-bottom:1.5em;color:rgb(17,17,17);padding-left:.5em;padding-right:.5em;"><span class="md_line" style="margin-bottom:.5em;line-height:1.8186625;">很多Git子命令都接受一个修正的参数来决定命令作用于仓库的哪个部分，可能是某次特定的提交的 sha1 值，或者一个分支的名称，又或者是一个符号性的名称如 HEAD（代表当前检出分支最后一次的提交），除了这些简单的形式以外，你还可以附加一个指定的日期或时间作为参数，表示“这个时间的引用”。</span></p><p class="md_block" style="margin-top:1.5em;margin-bottom:1.5em;color:rgb(17,17,17);padding-left:.5em;padding-right:.5em;"><span class="md_line" style="margin-bottom:.5em;line-height:1.8186625;">这个功能在某些时候会变得十分有用，比如当你处理最新出现的 bug，自言自语道：“这个功能明明昨天还是好好的，到底又改了些什么”，不用盯着满屏的 git 日志的输出试图弄清楚什么时候更改了提交，您只需运行 git diff HEAD@{yesterday}，会看到从昨天以来的所有修改，这也适用于较长的时间段（例如 git diff HEAD@{'2 months ago'}） ，以及一个确切的日期（例如git diff HEAD@{'2010-01-01 12:00:00'}）。</span></p><p class="md_block" style="margin-top:1.5em;margin-bottom:1.5em;color:rgb(17,17,17);padding-left:.5em;padding-right:.5em;"><span class="md_line" style="margin-bottom:.5em;line-height:1.8186625;">您还可以将这些基于日期的修改参数与使用修正参数的任何 Git 子命令一起使用。在 gitrevisions 手册页中有关于具体使用哪种格式的详细信息。</span></p><h2 style="color:rgb(16,163,238);line-height:1.5em;margin-top:1.5em;margin-bottom:.8em;font-size:1.45em;">12. 全知的 reflog</h2><span style="color:rgb(17,17,17);"></span><p class="md_block" style="margin-top:1.5em;margin-bottom:1.5em;color:rgb(17,17,17);padding-left:.5em;padding-right:.5em;"><span class="md_line" style="margin-bottom:.5em;line-height:1.8186625;">你是不是试过在 rebase 时干掉过某次提交，后来又发现你需要保留这次提交的一些东西？你可能觉得这些提交的东西已经永远找不回来了，只能从头再来了。其实不然，但如果你在本地工作副本中提交了，提交就会进入到 "引用日志" ，你仍然可以访问到。</span></p><p class="md_block" style="margin-top:1.5em;margin-bottom:1.5em;color:rgb(17,17,17);padding-left:.5em;padding-right:.5em;"><span class="md_line" style="margin-bottom:.5em;line-height:1.8186625;">运行 git reflog 将在本地工作副本中显示当前分支的所有活动的列表，并为您提供每个提交的 SHA1 值。一旦发现你 rebase 时放弃的那个提交，你可以运行 git checkout<span class="Apple-converted-space"> 来检出该次提交，复制好你需要的信息，然后再运行 git checkout HEAD 返回到分支最新的提交去。</span></span></p><h2 style="color:rgb(16,163,238);line-height:1.5em;margin-top:1.5em;margin-bottom:.8em;font-size:1.45em;">以上就是全部内容</h2><span style="color:rgb(17,17,17);"></span><p class="md_block" style="margin-top:1.5em;margin-bottom:1.5em;color:rgb(17,17,17);padding-left:.5em;padding-right:.5em;"><span class="md_line" style="margin-bottom:.5em;line-height:1.8186625;">希望这些技巧中至少有一个能教你一些关于 Git 的新知识，Git 已经 12 岁了，在这个持续创新，不断添加新特性的项目里，你最喜欢哪个技巧？</span><span class="md_line" style="margin-bottom:.5em;line-height:1.8186625;"><br /></span></p><p style="padding-bottom:15px;font-size:16px;white-space:normal;min-height:1em;color:rgb(51,51,51);"><img width="160" style="margin-right:auto;margin-left:auto;color:rgb(62,62,62);" src="https://ss.csdn.net/p?http://mmbiz.qpic.cn/mmbiz_png/bLmy0N4HIadzOib9FTevA2icA5IqFPJibjSJT9qkHtiaubos6KTPU6w0oiaSKo02FFg1jppiaCLKHJjTnyTHAjMJsXRw/640?" alt="640?" /></p><p style="white-space:normal;"><span style="color:rgb(255,76,65);"><strong><span></span></strong></span></p><p style="margin-top:10px;padding-right:1em;padding-left:1em;font-size:16px;white-space:normal;min-height:1em;"><br /></p><p style="margin-top:10px;padding-right:.5em;padding-left:.5em;font-size:16px;white-space:normal;min-height:1em;"><span style="font-size:15px;">译者：Tocy, 琪花亿草, 开源中国首席屌炸天, 无若, Tot_ziens, kevinlinkai</span></p><p style="margin-top:10px;padding-right:.5em;padding-left:.5em;font-size:16px;white-space:normal;min-height:1em;"><span style="font-size:15px;">出处：开源中国</span></p><p style="margin-top:10px;padding-right:.5em;padding-left:.5em;font-size:16px;white-space:normal;min-height:1em;"><span style="font-size:15px;">链接：https://www.oschina.net/translate/12-git-tips-gits-12th-birthday?lang=chs&amp;page=1#</span></p><p style="white-space:normal;"><span style="color:rgb(255,76,65);"><strong><span></span></strong></span></p><p style="padding-right:0em;padding-left:0em;font-size:16px;white-space:normal;color:rgb(62,62,62);min-height:1em;"><br /></p><blockquote style="margin-top:5px;margin-bottom:5px;padding-right:10px;border-width:2px;border-style:dashed;border-color:rgb(153,153,153);font-size:14px;line-height:30px;"><p style="margin-top:10px;min-height:1em;"><span style="font-size:16px;"><strong>推荐阅读：</strong></span></p><h2></h2><ul class="list-paddingleft-2" style="list-style-type:square;"><li><p style="min-height:1em;"><a href="http://mp.weixin.qq.com/s?__biz=MjM5OTMxMzA4NQ==&amp;mid=2655935671&amp;idx=1&amp;sn=e2185e42be91845bc4d7371bd99735f8&amp;chksm=bc8797658bf01e73291d1d84394b98329d13cd2b6d4b4eeea7788cce8bf3614aa271a50c1a33&amp;scene=21#wechat_redirect" style="color:rgb(61,170,214);text-decoration:underline;font-size:15px;">我是如何在5个月内找到一份薪水翻番的工作的？</a><br /></p><h2></h2></li><li><h2><a href="http://mp.weixin.qq.com/s?__biz=MjM5OTMxMzA4NQ==&amp;mid=2655935666&amp;idx=1&amp;sn=1d43d24dfbb7def6e186f88a4d44f559&amp;chksm=bc8797608bf01e76062423defe66d25b4488ff3f3767d5166225e3fcda9a3dd654a751b1fe4a&amp;scene=21#wechat_redirect" style="color:rgb(61,170,214);text-decoration:underline;font-size:15px;">刚开始学编程？这几款小工具能让你事半功倍</a><br /></h2></li><li><h2><a href="http://mp.weixin.qq.com/s?__biz=MjM5OTMxMzA4NQ==&amp;mid=2655935654&amp;idx=1&amp;sn=bb920ae8ea67930e1afe039eff29a3fb&amp;chksm=bc8797748bf01e6287a74fc2d85d618dfc046177b91edb61d1a2937a5c8fcba5a8971f7ba760&amp;scene=21#wechat_redirect" style="color:rgb(61,170,214);text-decoration:underline;font-size:15px;">我们整理了20个Python项目，送给正在求职的你</a><br /></h2></li><li><h2><a href="http://mp.weixin.qq.com/s?__biz=MjM5OTMxMzA4NQ==&amp;mid=2655935620&amp;idx=1&amp;sn=d2a2842bf7d7746bf1a74bffd53b853c&amp;chksm=bc8797568bf01e40f3635dbad58dbddc3d2c5f133a64357a0969b82f235b11e5b35a45f3940b&amp;scene=21#wechat_redirect" style="color:rgb(61,170,214);text-decoration:underline;font-size:15px;">TIOBE 3月编程排行榜：Python突破第四，R跌至20</a><br /></h2></li></ul></blockquote><p style="padding-right:0em;padding-left:0em;font-size:16px;white-space:normal;color:rgb(62,62,62);min-height:1em;"><br /></p><p style="padding-right:0em;padding-left:0em;font-size:16px;white-space:normal;color:rgb(62,62,62);min-height:1em;"><img class="img_loading" src="https://ss.csdn.net/p?https://mmbiz.qpic.cn/mmbiz_png/bLmy0N4HIacsICSFW1tfKVHT6uUH7gHedQ4p2UzZuOGqYQQaG3ykzBPj6pUFPwibXtdEFvQDgd7rcAHC4B2gkpw/640?wx_fmt=1" alt="640?wx_fmt=1" /></p><p><br /></p>
+                </div>
+              </div>
+                </div>
+				<div class="hide-article-box text-center csdn-tracking-statistics tracking-click" data-mod="popu_376">
+			<a class="btn btn-red-hollow" id="btn-readmore">阅读更多</a>
+		</div>
+        	</article>
+	
+	
+	<!-- !empty($pre_next_article[0]) -->
+		</div>
+<script>
+    $(".MathJax").remove();
+</script>
+<script type="text/javascript" src="https://static-blog.csdn.net/mdeditor/public/res/bower-libs/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config"> 
+    MathJax.Hub.Config({ 
+			"HTML-CSS": { 
+					linebreaks: { automatic: true, width: "94%container" },
+					imageFont: null
+			},
+			tex2jax: {
+				preview: "none"
+			},
+			mml2jax: {
+				preview: 'none'
+			}
+	});
+</script>
+<script>
+	(function(){
+		var btnReadmore = $("#btn-readmore");
+		if(btnReadmore.length>0){
+			var winH = $(window).height();
+			var articleBox = $("div.article_content");
+			var artH = articleBox.height();
+			if(artH > winH*2){
+				articleBox.css({
+					'height':winH*2+'px',
+					'overflow':'hidden'
+				})
+				btnReadmore.click(function(){
+					articleBox.removeAttr("style");
+					$(this).parent().remove();
+				})
+			}else{
+				btnReadmore.parent().remove();
+			}
+		}
+	})()
+</script>        <div class="edu-promotion"></div>
+        <a id="commentBox"></a>
+<div class="comment-box">
+	  	<div class="unlogin-box text-center">
+		想对作者说点什么？
+		<!-- $curl 当前地址 -->
+		<a href="https://passport.csdn.net/account/login?from=https://blog.csdn.net/MOY37RQW1JarN33BgZk/article/details/79991156#commentBox" class="btn btn-sm btn-red">我来说一句</a>
+	</div>
+			<div class="comment-list-container">
+		<a id="comments"></a>
+		<div class="comment-list-box">
+		</div>
+		<div id="commentPage" class="pagination-box d-none"></div>
+		<div class="opt-box text-center">
+			<button class="btn btn-sm btn-link-blue" id="btnMoreComment"></button>
+		</div>
+	</div>
+</div>        <div class="recommend-box">
+            		<div class="recommend-item-box csdn-tracking-statistics" data-mod="popu_387" data-poputype="feed"  data-feed-show="false"  data-dsm="post">
+		<h4 class="text-truncate">
+			<a href="https://edu.csdn.net/topic/python110?utm_source=blogre1" target="_blank" strategy="EduRecommendInPriority_0">
+				Python全栈工程师特训班			</a>
+		</h4>
+		<p class="content">
+			<a href="https://edu.csdn.net/topic/python110?utm_source=blogre1" target="_blank" strategy="EduRecommendInPriority_0">
+				本课程内容由浅入深详细讲解了Python整套开发流程，包含了：Python基础、Python Web开发、Python爬虫技术、Python自动化运维、Python数据挖掘与数据学习五大模块，阶段性项目实战会让你更加贴切工作。四个月的学习，成就真正的Python全栈工程师。			</a>
+		</p>
+		<div class="info-box d-flex align-content-center">
+			<p>
+				<span class="read-num">学院</span>
+			</p>
+			<p>
+				<span class="date">2018年04月26日 14:37</span>
+			</p>
+		</div>
+	</div>
+						<div class="recommend-item-box recommend-download-box csdn-tracking-statistics clearfix" data-mod="popu_387" data-poputype="feed"  data-feed-show="false"  data-dsm="post">
+			<div class="content float-left">
+				<h4 class="text-truncate">
+					<a href="https://download.csdn.net/download/wyc6174/3532615" target="_blank" strategy="BlogCommendFromQuerySearch_8">
+						git的使用和创建_creat					</a>
+				</h4>
+				<p>
+					<span class="data">2011年08月19日 </span>
+					<span class="size">905KB</span>
+					<span class="type">下载</span>
+				</p>
+			</div>
+			<div class="img-box float-right">
+				<a href="https://download.csdn.net/download/wyc6174/3532615" target="_blank" strategy="BlogCommendFromQuerySearch_8">
+					<img src="http://csdnimg.cn/release/download/old_static/images/minetype/pdf.svg" alt="">
+				</a>
+			</div>
+		</div>
+				<div class="recommend-item-box recommend-ad-box" id="ad1">
+
+			
+				<script>
+				(function() {
+					var s = "_" + Math.random().toString(36).slice(2);
+					document.write('<div id="' + s + '"></div>');
+					(window.slotbydup=window.slotbydup || []).push({
+						id: '4765209',
+						container: s,
+						size: '808,120',
+						display: 'inlay-fix'
+					});
+				})();
+				</script>
+				<script src="http://dup.baidustatic.com/js/os.js"></script>
+
+			
+		</div>
+					<div class="recommend-item-box recommend-download-box csdn-tracking-statistics clearfix" data-mod="popu_387" data-poputype="feed"  data-feed-show="false"  data-dsm="post">
+			<div class="content float-left">
+				<h4 class="text-truncate">
+					<a href="https://download.csdn.net/download/mengzhongyan/3784903" target="_blank" strategy="BlogCommendFromQuerySearch_7">
+						git使用技巧					</a>
+				</h4>
+				<p>
+					<span class="data">2011年11月12日 </span>
+					<span class="size">30KB</span>
+					<span class="type">下载</span>
+				</p>
+			</div>
+			<div class="img-box float-right">
+				<a href="https://download.csdn.net/download/mengzhongyan/3784903" target="_blank" strategy="BlogCommendFromQuerySearch_7">
+					<img src="http://csdnimg.cn/release/download/old_static/images/minetype/docx.svg" alt="">
+				</a>
+			</div>
+		</div>
+					<div class="recommend-item-box csdn-tracking-statistics" data-mod="popu_387" data-poputype="feed"  data-feed-show="false"  data-dsm="post">
+		<h4 class="text-truncate">
+			<a href="https://blog.csdn.net/backzero/article/details/8281800" target="_blank" strategy="BlogCommendFromQuerySearch_3">
+				git 12个技巧			</a>
+		</h4>
+		<p class="content">
+			<a href="https://blog.csdn.net/backzero/article/details/8281800" target="_blank" strategy="BlogCommendFromQuerySearch_3">
+				1.使用“git diff”来折叠多行
+
+用git diff经常会出现很多内容，导致很多内容被遮住了，让人很是苦恼，幸运的是这里有个解决方案。
+如果你使用less作为默认的pager，只需要输入...			</a>
+		</p>
+		<div class="info-box d-flex align-content-center">
+			<p>
+				<a class="avatar" src="https://blog.csdn.net/backzero" title="backzero" target="_blank">
+					<img src="https://avatar.csdn.net/5/7/8/3_backzero.jpg" alt="backzero" class="avatar-pic">
+					<span class="name">backzero</span>
+				</a>
+			</p>
+			<p>
+				<span class="date">2012-12-11 12:19:24</span>
+			</p>
+			<p>
+				<span class="read-num">阅读数：407</span>
+			</p>
+		</div>
+	</div>
+					<div class="recommend-item-box csdn-tracking-statistics" data-mod="popu_387" data-poputype="feed"  data-feed-show="false"  data-dsm="post">
+		<h4 class="text-truncate">
+			<a href="https://blog.csdn.net/yunzhongfeiniao/article/details/17176191" target="_blank" strategy="BlogCommendFromQuerySearch_9">
+				Ubuntu Server 12.10下安装以及配置Git			</a>
+		</h4>
+		<p class="content">
+			<a href="https://blog.csdn.net/yunzhongfeiniao/article/details/17176191" target="_blank" strategy="BlogCommendFromQuerySearch_9">
+				系统环境为Ubuntu12.10.
+先查看系统是否已经默认安装Git，输入命令 
+git --version若出现如下图所示，则说明当前系统未安装Git，则进行手动安装。
+
+根据提示命令行中手动输入 ...			</a>
+		</p>
+		<div class="info-box d-flex align-content-center">
+			<p>
+				<a class="avatar" src="https://blog.csdn.net/yunzhongfeiniao" title="yunzhongfeiniao" target="_blank">
+					<img src="https://avatar.csdn.net/E/B/7/3_yunzhongfeiniao.jpg" alt="yunzhongfeiniao" class="avatar-pic">
+					<span class="name">yunzhongfeiniao</span>
+				</a>
+			</p>
+			<p>
+				<span class="date">2013-12-07 00:22:31</span>
+			</p>
+			<p>
+				<span class="read-num">阅读数：1333</span>
+			</p>
+		</div>
+	</div>
+					<div class="recommend-item-box csdn-tracking-statistics" data-mod="popu_387" data-poputype="feed"  data-feed-show="false"  data-dsm="post">
+		<h4 class="text-truncate">
+			<a href="https://blog.csdn.net/u011043843/article/details/25385171" target="_blank" strategy="BlogCommendFromQuerySearch_10">
+				我一生中最重要的12个人			</a>
+		</h4>
+		<p class="content">
+			<a href="https://blog.csdn.net/u011043843/article/details/25385171" target="_blank" strategy="BlogCommendFromQuerySearch_10">
+				中国人爱说这样一句话：朋友多了路好走。于是，人们便急着把每一个刚刚结识的新面孔呼之为朋友，将其拉入自己的关系圈。其实，人是否成为朋友是需要缘分的，如同恋爱能否成功一样。但是无论是谁，一生中都有举足轻重...			</a>
+		</p>
+		<div class="info-box d-flex align-content-center">
+			<p>
+				<a class="avatar" src="https://blog.csdn.net/u011043843" title="u011043843" target="_blank">
+					<img src="https://avatar.csdn.net/E/A/8/3_u011043843.jpg" alt="u011043843" class="avatar-pic">
+					<span class="name">u011043843</span>
+				</a>
+			</p>
+			<p>
+				<span class="date">2014-05-09 13:06:06</span>
+			</p>
+			<p>
+				<span class="read-num">阅读数：855</span>
+			</p>
+		</div>
+	</div>
+					<div class="recommend-item-box recommend-ad-box" id="yd_a_d_feed_0">
+			<script>
+				var new_element = document.createElement("script"); 
+        new_element.setAttribute("async", "async"); 
+        new_element.setAttribute("charset", "utf-8"); 
+        new_element.setAttribute("data-notify", "inforFlowMulti_notify");
+        new_element.setAttribute("src", "https://shared.ydstatic.com/js/yatdk/3.0.0/stream.js");
+        new_element.setAttribute("data-id", "8935aa488dd58452b9e5ee3b44f1212f");
+
+        new_element.setAttribute("data-insert-nodes", "yd_a_d_feed_0");
+
+        new_element.setAttribute("data-pos", "inline");
+        new_element.setAttribute("data-img-Style", "float:right;width:120px;");
+        new_element.setAttribute("data-des-Style", "color: #8e959a;line-height: 24px;font-size:14px;font-family: 'PingFang SC', 'Microsoft YaHei', SimHei, Arial, SimSun;");
+        new_element.setAttribute("data-tit-Style", "font-size:20px;font-weight:bold;margin-bottom:10px;font-family: 'PingFang SC', 'Microsoft YaHei', SimHei, Arial, SimSun;");
+        new_element.setAttribute("data-div-Style", "background-image: url(//img-ads.csdn.net/2016/201608021757063065.png);background-repeat: no-repeat;background-position: bottom left;");
+        document.body.appendChild(new_element);
+			</script>
+		</div>
+			<div class="recommend-item-box csdn-tracking-statistics" data-mod="popu_387" data-poputype="feed"  data-feed-show="false"  data-dsm="post">
+		<h4 class="text-truncate">
+			<a href="https://blog.csdn.net/Zhangxichao100/article/details/50936674" target="_blank" strategy="BlogCommendFromQuerySearch_2">
+				12个小技巧，让你高效使用Eclipse			</a>
+		</h4>
+		<p class="content">
+			<a href="https://blog.csdn.net/Zhangxichao100/article/details/50936674" target="_blank" strategy="BlogCommendFromQuerySearch_2">
+				集成开发环境（IDE）让应用开发更加容易。它们强调语法，让你知道是否你存在编译错误，在众多的其他事情中允许你单步调试代码。像所有的IDE一 样，Eclipse也有快捷键和小工具，这些会让您感觉轻松许多...			</a>
+		</p>
+		<div class="info-box d-flex align-content-center">
+			<p>
+				<a class="avatar" src="https://blog.csdn.net/Zhangxichao100" title="Zhangxichao100" target="_blank">
+					<img src="https://avatar.csdn.net/1/3/0/3_zhangxichao100.jpg" alt="Zhangxichao100" class="avatar-pic">
+					<span class="name">Zhangxichao100</span>
+				</a>
+			</p>
+			<p>
+				<span class="date">2016-03-20 15:11:55</span>
+			</p>
+			<p>
+				<span class="read-num">阅读数：1201</span>
+			</p>
+		</div>
+	</div>
+					<div class="recommend-item-box csdn-tracking-statistics" data-mod="popu_387" data-poputype="feed"  data-feed-show="false"  data-dsm="post">
+		<h4 class="text-truncate">
+			<a href="https://blog.csdn.net/w7849516230/article/details/50993062" target="_blank" strategy="BlogCommendFromQuerySearch_5">
+				一个三年Android开发的总结-常用的git技巧与误区			</a>
+		</h4>
+		<p class="content">
+			<a href="https://blog.csdn.net/w7849516230/article/details/50993062" target="_blank" strategy="BlogCommendFromQuerySearch_5">
+				常用的git技巧前文《git的基础知识与协作开发》，对git的基本使用作了流水式的总结。在日常工作中最常用的也往往都是git checkout -b创建新分支，修改之后commit，再然后git pu...			</a>
+		</p>
+		<div class="info-box d-flex align-content-center">
+			<p>
+				<a class="avatar" src="https://blog.csdn.net/w7849516230" title="w7849516230" target="_blank">
+					<img src="https://avatar.csdn.net/3/7/1/3_w7849516230.jpg" alt="w7849516230" class="avatar-pic">
+					<span class="name">w7849516230</span>
+				</a>
+			</p>
+			<p>
+				<span class="date">2016-03-27 18:50:25</span>
+			</p>
+			<p>
+				<span class="read-num">阅读数：2206</span>
+			</p>
+		</div>
+	</div>
+					<div class="recommend-item-box csdn-tracking-statistics" data-mod="popu_387" data-poputype="feed"  data-feed-show="false"  data-dsm="post">
+		<h4 class="text-truncate">
+			<a href="https://blog.csdn.net/MLQ8087/article/details/52174752" target="_blank" strategy="BlogCommendFromQuerySearch_4">
+				Git 进阶：10大技巧让你迅速提升			</a>
+		</h4>
+		<p class="content">
+			<a href="https://blog.csdn.net/MLQ8087/article/details/52174752" target="_blank" strategy="BlogCommendFromQuerySearch_4">
+				最近我们推出了两个教程：熟悉Git的基本功能和让你在开发团队中熟练的使用Git .
+ 我们所讨论的命令足够一个开发者在Git使用方面游刃有余。在这篇文章中，我们试图探索怎样有效的管理你的时间和充分的...			</a>
+		</p>
+		<div class="info-box d-flex align-content-center">
+			<p>
+				<a class="avatar" src="https://blog.csdn.net/MLQ8087" title="MLQ8087" target="_blank">
+					<img src="https://avatar.csdn.net/3/A/8/3_mlq8087.jpg" alt="MLQ8087" class="avatar-pic">
+					<span class="name">MLQ8087</span>
+				</a>
+			</p>
+			<p>
+				<span class="date">2016-08-10 17:51:55</span>
+			</p>
+			<p>
+				<span class="read-num">阅读数：1993</span>
+			</p>
+		</div>
+	</div>
+					<div class="recommend-item-box csdn-tracking-statistics" data-mod="popu_387" data-poputype="feed"  data-feed-show="false"  data-dsm="post">
+		<h4 class="text-truncate">
+			<a href="https://blog.csdn.net/qq496013218/article/details/54926641" target="_blank" strategy="BlogCommendFromQuerySearch_6">
+				关于Intellij Idea中git的技巧			</a>
+		</h4>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq496013218/article/details/54926641" target="_blank" strategy="BlogCommendFromQuerySearch_6">
+							</a>
+		</p>
+		<div class="info-box d-flex align-content-center">
+			<p>
+				<a class="avatar" src="https://blog.csdn.net/qq496013218" title="qq496013218" target="_blank">
+					<img src="https://avatar.csdn.net/5/3/6/3_qq496013218.jpg" alt="qq496013218" class="avatar-pic">
+					<span class="name">qq496013218</span>
+				</a>
+			</p>
+			<p>
+				<span class="date">2017-02-08 14:41:08</span>
+			</p>
+			<p>
+				<span class="read-num">阅读数：793</span>
+			</p>
+		</div>
+	</div>
+			            <div class="recommend-loading-box">
+                <img src='https://csdnimg.cn/release/phoenix/images/feedLoading.gif'>
+            </div>
+            <div class="recommend-end-box">
+                <p class="text-center">没有更多推荐了，<a href="https://blog.csdn.net/" class="c-blue c-blue-hover c-blue-focus">返回首页</a></p>
+            </div>
+        </div>
+    </main>
+</div>
+<div class="mask-dark"></div>
+<div class="report-box">
+    <div class="pos-box">
+        <h2 class="title">不良信息举报</h2>
+        <a class="btn-close">
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#csdnc-times"></use>
+            </svg>
+        </a>
+        <form id="frmReport">
+            <div class="form-box">
+                <div class="txt-row-box">
+                    <label class="title" id="reptTit">举报内容：</label>
+                    <p class="rpt-title text-truncate">Git 12 岁了，为你送上 12 个 Git 的使用技巧！</p>
+                </div>
+                <div class="txt-row-box">
+                    <label class="title">举报原因：</label>
+                    <div class="rdo-box">
+                        <label><input type="radio" class="rdo-chk report-type" id="report_sex" name="report_type" value="1">色情</label>
+                        <label><input type="radio" class="rdo-chk report-type" id="report_Politics" name="report_type" value="2">政治</label>
+                        <label><input type="radio" class="rdo-chk report-type" id="report_copy" name="report_type" value="3">抄袭</label>
+                        <label><input type="radio" class="rdo-chk report-type" id="report_ad" name="report_type" value="4">广告</label>
+                        <label><input type="radio" class="rdo-chk report-type" id="report_want" name="report_type" value="5">招聘</label>
+                        <label><input type="radio" class="rdo-chk report-type" id="report_call" name="report_type" value="6">骂人</label>
+                        <label><input type="radio" class="rdo-chk report-type" id="report_other" name="report_type" value="7">其他</label>
+                    </div>
+                </div>
+                <div class="txt-row-box" id="rptOriginalurl">
+                    <label class="title">原文地址：</label>
+                    <div class="txt-box">
+                        <input class="ipt" type="text" name="originalurl">
+                    </div>
+                </div>
+                <div class="txt-row-box">
+                    <label class="title">原因补充：</label>
+                    <div class="txt-box">
+                        <textarea class="ipt ipt-textarea" name="description" maxlength="30"></textarea>
+                        <p class="remark">最多只允许输入30个字</p>
+                    </div>
+                </div>
+            </div>
+            <div class="opt-box text-right">
+                <input type="reset" class="btn btn-link-gray btn-close" value="取消">
+                <input type="submit" class="btn btn-red btn-submit" value="提交">
+            </div>
+        </form>
+    </div>
+</div>
+<div class="pulllog-box" style="display: block;">
+	<div class="pulllog clearfix">
+		<span class="text float-left">加入CSDN，享受更精准的内容推荐，与500万程序员共同成长！</span>
+		<div class="pulllog-btn float-right clearfix">
+            <button class="pulllog-login float-left csdn-tracking-statistics tracking-click" data-mod="popu_557">
+                登录
+            </button>
+            <div class="pulllog-sigin float-left csdn-tracking-statistics tracking-click" data-mod="popu_558">
+                <a href="https://passport.csdn.net/account/mobileregister" target="_blank">注册</a>
+            </div>
+            <button class="btn-close">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#csdnc-times"></use>
+                </svg>
+            </button>
+		</div>
+	</div>
+</div>
+<div id="loginWrap" style="display:none"></div>
+<div class="tool-box">
+	<ul class="meau-list">
+		<li>
+			<button class="btn-like" title="点赞">
+				<svg class="icon active" aria-hidden="true">
+					<use xlink:href="#csdnc-thumbsup-ok"></use>
+				</svg><svg class="icon no-active" aria-hidden="true">
+					<use xlink:href="#csdnc-thumbsup"></use>
+				</svg>
+				<p>0</p>
+			</button>
+		</li>
+		<li class="toc-container-box" id="liTocBox">
+			<button class="btn-toc" title="目录">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#csdnc-contents"></use>
+				</svg><br>目录
+			</button>
+			<div class="toc-container">
+				<div class="pos-box">
+					<div class="icon-arrow"></div>
+					<div class="scroll-box">
+						<div class="toc-box"></div>
+					</div>
+				</div>
+				<div class="opt-box">
+					<button class="btn-opt prev nomore" title="向上">
+						<svg class="icon" aria-hidden="true">
+							<use xlink:href="#csdnc-chevronup"></use>
+						</svg>
+					</button>
+					<button class="btn-opt next">
+						<svg class="icon" aria-hidden="true">
+							<use xlink:href="#csdnc-chevrondown"></use>
+						</svg>
+					</button>
+				</div>
+			</div>
+		</li>
+		<li>
+			<button class="btn-bookmark" title="收藏">
+				<svg class="icon active" aria-hidden="true">
+					<use xlink:href="#csdnc-bookmark-ok"></use>
+				</svg><svg class="icon no-active" aria-hidden="true">
+					<use xlink:href="#csdnc-bookmark"></use>
+				</svg><br>收藏
+			</button>
+		</li>
+		<li>
+			<a class="btn-comments" title="评论" href="#commentBox">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#csdnc-comments"></use>
+				</svg><br>评论
+			</a>
+		</li>
+				<li class="bdsharebuttonbox">
+			<a class="btn-comments bds_weixin" data-cmd="weixin" title="微信分享">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#csdnc-wechat"></use>
+				</svg><br>微信
+			</a>
+		</li>
+		<li class="bdsharebuttonbox">
+			<a class="btn-comments bds_tsina" data-cmd="tsina" title="微博分享">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#csdnc-weibo"></use>
+				</svg><br>微博
+			</a>
+		</li>
+		<li class="bdsharebuttonbox">
+			<a class="btn-comments bds_qzone" data-cmd="qzone" title="QQ分享">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#csdnc-qq"></use>
+				</svg><br>QQ
+			</a>
+		</li>
+	</ul>
+</div>
+<script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "1", "bdMiniList": false, "bdPic": "", "bdStyle": "0", "bdSize": "16" }, "share": {} }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'https://csdnimg.cn/static/api/js/share.js?v=89860594'];</script>
+<script src="https://csdnimg.cn/public/sandalstrap/1.2/js/sandalstrap.min.js"></script>
+<script src="https://csdnimg.cn/release/phoenix/vendor/pagination/paging.js"></script>
+<script src='https://csdnimg.cn/public/common/gotop/js/goTop-v1.0.min.js?v201803151422'></script>
+<script>
+    GoTop({
+        right: 8,
+        hasReport: true,
+        reportFun: function() {
+            showReport(false,'Git 12 岁了，为你送上 12 个 Git 的使用技巧！');
+        }
+    })
+</script>
+<script src="https://csdnimg.cn/release/phoenix/template/js/common-bd54b21308.min.js"></script>
+<script src="https://csdnimg.cn/release/phoenix/template/js/detail-dd0e825f48.min.js"></script>
+<script src="https://csdnimg.cn/release/phoenix/themes/big-white/big-white-46c7bd3d86.min.js"></script>
+</body>
+<div class="box-box-default">
+    <a class="btn-remove">
+        关闭
+    </a>
+    <script type="text/javascript" src="//cee1.iteye.com/mhzzjepzz.js"></script>
+</div>
+<div class="box-box-large">
+    <a class="btn-remove">
+        关闭
+    </a>
+    <script type="text/javascript" src="//cee1.iteye.com/idvveasfs.js"></script>
+</div>
+</html>
