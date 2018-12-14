@@ -1,7 +1,21 @@
+#用于设置  Git属性  的配置文件
+#.gitattributes
+
+#git命令会通过 .gitignore目录来忽略一些文件的上传， 一般 那些IDE自动生成的文件是不会上传的。
+#忽略指定的文件
+# patch 文件是 git apply 命令生成的补丁文件
+*.patch
+
+# 忽略文件夹下的所有文件
+# 可以将通过 git archive 打包的代码放在这个目录下，载执行git 的时候，不用更新这个代码
+target/
+#忽略某一类文件 , java 编译后的类文件
+*.class
+
+# 个人觉得 .gitignore 这个文件也不必上传，毕竟每个人的文件可能有所不同。
+.gitignore
+
 .idea/
-
-todo/
-
 
 .gitignore
 
