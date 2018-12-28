@@ -34,3 +34,8 @@
 	方法二(从储藏中创建分支)： 执行 git stash branch 分支名A  命令，将stash创建成一个分支，安装分支冲突的解决方法来解决  
 
 ==    
+
+
+
+* 在window下创建.gitignore 文件的小技巧
+打开git-bash ， 执行  touch .gitignore 文件即可。 
