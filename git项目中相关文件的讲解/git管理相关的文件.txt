@@ -1,0 +1,4 @@
+.gitignore 文件可以帮助我们决定哪些文件不需要上传到git 仓库。 
+
+.gitattributes 文件，可以帮助我们自定义合并策略(merge strategies) 
+

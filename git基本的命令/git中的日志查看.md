@@ -3,6 +3,9 @@
 
  
     git log --pretty=oneline todo/todo.md
+
+    git log --pretty=oneline  , git log --oneline , git log --pretty=one 三者的效果一样。 
+    
     
 # 让git 记录按照图形的形式展示历史记录(仓库可视化)
     
