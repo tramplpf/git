@@ -1,0 +1,8 @@
+从头开始开发一个功能模块所需要的git命令：
+
+1. 创建一个远程分支
+	切换到要创建远程分支的源分支上面， 通过git checkout master. 
+	执行 git checkout -b new_branch_name  master. 
+	然后，创建相关的package 和class。 之后，执行git push 命令，git会给出相关的命令来和git远程仓库建立关联。 
+
+	
