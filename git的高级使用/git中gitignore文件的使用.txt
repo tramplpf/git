@@ -1,0 +1,7 @@
+在.gitignore 文件中可以添加要忽略的文件，但是只能忽略那些没有执行过git add 和git commit 命令的文件，如果要忽略的文件已经执行了git add命令，可以通过下面的命令来解决。 
+
+git rm --cached 要忽略的文件  # 从git的数据库中删除对于该文件或者目录的追踪记录
+git add --all
+git commit -m "备注"
+
+
