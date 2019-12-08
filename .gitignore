@@ -2,7 +2,7 @@
 
 todo/
 
-
+local/
 .gitignore
 
 *.iml

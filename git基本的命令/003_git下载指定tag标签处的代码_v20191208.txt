@@ -1,0 +1,7 @@
+
+git 下载指定tag 标签处的代码
+
+解决方法：
+命令：git clone --branch [tags标签] [git地址] 或者 git clone --b [tags标签] [git地址]
+
+例如：git clone -b 1.4.1 https://github.com/jumpserver/coco.git
