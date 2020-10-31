@@ -1,0 +1,2 @@
+在这个网站快速下载相关的git 软件。 可以自由的选择相关的版本
+https://npm.taobao.org/mirrors/git-for-windows/
